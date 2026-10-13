@@ -6,7 +6,7 @@ export const postcontrol =
             const { ID_Zona, Duracion_Minutos, Motivo_Control } = req.body;
 
             if (ID_Zona === undefined || Duracion_Minutos === undefined || Motivo_Control === undefined) {
-                return res.status(400).json({ 
+                return res.status(400).json({  
                     message: "Faltan parámetros: ID_Zona, Duracion_Minutos, Motivo_Control." // Mensaje en español
                 });
             }
