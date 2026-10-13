@@ -4,6 +4,7 @@ import path from 'path';
 import {fileURLToPath} from 'url';
 import sensoresRoutes from './routes/sensores.routes.js'
 import controlRoutes from './routes/control.routes.js'
+import configuracionRoutes from './routes/configuracion.routes.js'
 
 //definir modulo de ES
 const __filename = fileURLToPath(import.meta.url);
@@ -20,7 +21,8 @@ app.use(express.urlencoded({extended:true}));//se añade para poder receptar for
 app.use('/uploads',express.static(path.join(__dirname,'../uploads')));
 //rutas
 app.use('/api',sensoresRoutes),
-app.use('/api',controlRoutes)
+app.use('/api',controlRoutes),
+app.use('/api',configuracionRoutes)
 
 app.use((req,res,next)=>{
     res.status(400).json({
